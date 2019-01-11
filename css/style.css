@@ -1,0 +1,211 @@
+*{
+  margin: 0;
+  padding:0;
+  font-family: 'Montserrat';
+  z-index: 0;
+}
+body{
+  min-width: 450px;
+}
+header{
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+    background-color: #3498db;
+
+  display: inline-block;
+}
+
+footer{
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+}
+.projectName{
+  font-family: "Roboto";
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 2.5em;
+  width: 50%;
+  font-weight: 400;
+  color: #ecf0f1;
+  float:left;
+}
+.logoutBtn{
+  font-family: 'Montserrat';
+  position: relative;
+  margin-top: 30px;
+  left: 25%;
+  font-size: 1.4em;
+  background-color: #3498db;
+
+}
+.login{
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 8%;
+  width: 400px;
+  height: 500px;
+  border: 2px solid #6c5b7b;
+  border-radius: 7px;
+}
+.user-ico{
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.form-control{
+  margin: 30px auto;
+  width: 90%;
+}
+.btn-login{
+  width: 90%;
+  margin: 0px 5%;
+  position:relative;
+  bottom:-10px;
+}
+.errormsg{
+  margin-left: 5%;
+  color:red;
+  position:relative;
+  top:-20px;
+  visibility: inline;
+}
+.joke{
+  margin: auto;
+  margin-top:40px; 
+  font-size: 0.8em;
+  width: 55%;
+}
+.jokeLike{
+  width:90%;
+  margin:auto;
+  margin-top:10px;
+}
+.icon-small{
+  font-size: 2em;
+  background-color: red;
+}
+.jokes{
+  width: 100%;
+  text-align: center;
+}
+.btn-getJoke{
+ margin-top:50px;
+ font-size: 1.8em; 
+}
+.jokeDynamic{
+  font-size: 1.2em;
+}
+.messages{
+  text-align: left;
+  position:fixed;
+  bottom:5px;
+  right:20px;
+  width: 20%;
+  min-width: 200px;
+  height: 40px;
+  background-color: rgb(230,230,230,0.5);
+  border:2px solid rgb(200,200,200);
+  border-radius:3px; 
+  padding-left: 10px;
+  font-size: 1.3em;
+  padding-top: 5px;
+}
+.messages img{
+  width:13px;
+  height: auto;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+.messagesExtended{
+  text-align: left;
+  position:fixed;
+  bottom:5px;
+  right:20px;
+  width: 20%;
+  min-width: 230px;
+  height: 80%;
+  background-color: rgb(230,230,230,0.5);
+  border:2px solid rgb(200,200,200);
+  border-radius:3px; 
+  font-size: 1.3em;
+}
+.me-inner{
+   overflow: hidden;
+   overflow-y: scroll;
+   width: 100%;
+   height: 100%;
+}
+.messageClose{
+  text-align: left;
+  position:relative;
+  top:0px;
+  right:0px;
+  height: 40px;
+  background-color: rgb(230,230,230,0.5);
+  border:2px solid rgb(200,200,200);
+  padding-left: 10px;
+  font-size: 1em;
+  padding-top:5px;
+}
+.messageClose img{
+  width:13px;
+  height: auto;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+.singleMessage{
+  width: 100%;
+  height:80px;
+  padding:3px;
+}
+.user-ico-chat{
+  width:25px;
+  float:left;
+  padding-right:5px;
+  padding-top: 2px; 
+}
+.user-message-chat{
+  float:left;
+  max-height:40px; 
+}
+.user-message-chat-time{
+  font-size: 0.8em;
+  position:relative;
+  padding-left: 85%;
+  padding-top:4px; 
+  padding-right: 15px;
+}
+.bottomMessagesPanel{
+  position:fixed;
+  bottom:5px;
+  left:0%;
+  width: 75%;
+  background-color: red;
+  text-align: left;
+}
+.chatbox{
+  float:right;
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: blue;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .bottomMessagesPanel{
+    width:70%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .bottomMessagesPanel{
+    width:60%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .bottomMessagesPanel{
+    width:50%;
+  }
+}
