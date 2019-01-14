@@ -17,7 +17,8 @@ var handleGetJoke = () => {
 		data: JSON.stringify({login:sessionStorage.getItem("login"), token:sessionStorage.getItem("token")}),
 		success:(data)=>{
 			jokes.push({id:jokesID,text:data});
-			$("#joke").append($("<div>").attr({class:"jokeDynamic"}).text(data)).append($("<button>").text("Delete this joke").attr({class:"btn btn-primary", style:"margin-bottom:10px", onclick:"deleteJoke("+jokesID+")"}));
+			var jokeObj = JSON.parse(data);
+			$("#joke").append($("<div>").attr({class:"jokeDynamic"}).text(jokeObj.joke)).append($("<button>").text("Delete this joke").attr({class:"btn btn-primary", style:"margin-bottom:10px", onclick:"deleteJoke("+jokesID+")"}));
 			jokesID++;
 		}
 	});
@@ -32,7 +33,7 @@ var deleteJoke = (id) => {
 	});
 	jokes.splice(idToDelete, 1);
 	jokes.forEach((item, index)=> {
-		$("#joke").append($("<div>").attr({class:"jokeDynamic"}).text(item.text)).append($("<button>").text("Delete this joke").attr({class:"btn btn-primary", onclick:"deleteJoke("+item.id+")"}));
+		$("#joke").append($("<div>").attr({class:"jokeDynamic"}).text(JSON.parse(item.text).joke)).append($("<button>").text("Delete this joke").attr({class:"btn btn-primary", onclick:"deleteJoke("+item.id+")"}));
 	});
 }
 var handleLogin = () => {
@@ -50,12 +51,10 @@ var handleLogin = () => {
         	router.jokePage();
         },
         error: function( jqXhr, textStatus, errorThrown ){
-            console.log( errorThrown );
+        	console.log("should call error");
             showLoginError();
         }
     }); 
-    sessionStorage.setItem("logged", true);
-    router.jokePage();
 }
 var handleLogout = () => {
 	if(sessionStorage.getItem("logged") === "true"){
@@ -70,6 +69,25 @@ var handleLogout = () => {
 				router.loginPage();	
 			}
 		});
+	}
+}
+var handleUploadJoke = () => {
+	console.log("run cyka");
+	//login token joke
+	$.ajax({
+		url:"http://itsovy.sk:1201/addJoke", 
+		type:"post",
+		contentType: "application/json",
+		data:JSON.stringify({login:sessionStorage.getItem("login"),token:sessionStorage.getItem("token"),joke:$("#addJokeTextArea").val()}),
+		success:(data)=>{
+			router.jokePage();
+		}
+	});
+}
+
+var sendJoke = () => {
+	if(sessionStorage.getItem("logged") === "true"){
+		router.sendJokePage();
 	}
 }
 
@@ -111,6 +129,16 @@ messages.push({id:messageID,from:"rothmajers",text:"skuska sprava c 3", time:"16
 messageID++;
 messages.push({id:messageID,from:"rothmajers",text:"skuska sprava c 3", time:"16:28"});
 
+var getMessageById = (id) => {
+	var elementToReturn;
+	messages.forEach(element=>{
+		console.log(element.id === id);
+		if(element.id === id){
+			elementToReturn = element;
+		}
+	});
+	return elementToReturn;
+}
 
 var renderMessages = () => {
 	messages.forEach((element)=>{
@@ -140,6 +168,7 @@ var openMessage = (id) => {
 	});
 	openedBoxes.push(id);
 	repaintBoxes();
+	console.log("should repaint");
 }
 
 

@@ -181,8 +181,8 @@ footer{
   position:fixed;
   bottom:5px;
   left:0%;
+  height: 5%;
   width: 75%;
-  background-color: red;
   text-align: left;
 }
 .chatbox{
@@ -192,7 +192,25 @@ footer{
   margin-right: 10px;
   background-color: blue;
 }
+.close-msg-box{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0px;
+  background-color: white;
 
+}
+.sendJoke{
+  text-align: center;
+}
+#addJokeTextArea{
+  width: 50%;
+  min-width: 400px;
+  height: 250px;
+  font-size: 2em;
+  margin-top:30px;
+
+}
 
 @media only screen and (max-width: 900px) {
   .bottomMessagesPanel{
@@ -209,3 +227,4 @@ footer{
     width:50%;
   }
 }
+

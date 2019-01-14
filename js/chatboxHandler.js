@@ -9,12 +9,13 @@ $(window).resize(() => {
 
 });
 var repaintBoxes = () => {
-	console.log("repainting...");
 	var counter = 0;
 	$(".bottomMessagesPanel").empty();
 	openedBoxes.slice().reverse().forEach((element)=>{
 		if(counter < countOnScreen){
-			$(".bottomMessagesPanel").append($("<div>").attr({class:"chatbox"}).text("random sprava?"));
+			var msg = getMessageById(element);
+			var deleteBtn = $("<button>").attr({class:"close-msg-box"}).append($("<img>").attr({src:"gfx/dialog_close.png"}));
+			$(".bottomMessagesPanel").append($("<div>").attr({class:"chatbox"}).text(getMessageById(element).from)).append(deleteBtn);
 		}
 		counter++;
 	});

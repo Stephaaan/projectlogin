@@ -4,6 +4,7 @@ function Router() {
 		$("#loginForm").hide();
 		$("#jokes").hide();
 		$("#logoutBtn").hide();
+		$("#sendJoke").hide();
 		$("#joke").empty();
 		hideLoginError();
 	}
@@ -17,6 +18,10 @@ function Router() {
 		$("#jokes").show();
 		closeMessageBox();
 		renderMessages();
+	}
+	this.sendJokePage = () => {
+		this.hideAll();
+		$("#sendJoke").show();
 	}
 }
 

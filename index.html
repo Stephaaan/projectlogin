@@ -39,6 +39,7 @@
       <!-- jokes -->
       <div class="jokes" id="jokes">
         <input type="button" class="btn btn-primary btn-getJoke" value="Get funny joke!" onclick="handleGetJoke()">
+        <input type="button" class="btn btn-primary btn-getJoke" value="Send your own joke!" onclick="sendJoke()">
         <div id="joke" class="joke">
         </div>
         <div class="messages" id="messages" onclick="openMessageBox()">
@@ -50,8 +51,15 @@
           </div>
           <div id="me-inner" class="me-inner"></div>
         </div>
-        <div id=bmp" class="bottomMessagesPanel">a</div>
+        <div id=bmp" class="bottomMessagesPanel">&nbsp</div>
       </div>
+      <!-- send nudes -->
+      <div id="sendJoke" class="sendJoke">
+        <textarea id="addJokeTextArea"></textarea>
+        <br>
+        <input type="button" class="btn btn-primary btn-getJoke" value="Send joke!" onclick="handleUploadJoke()">
+      </div>
+
     </section>
     <footer>
       (c) 2019 by Stefan Rothmajer
