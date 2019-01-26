@@ -1,186 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Project Login</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <script type="text/javascript" src="js/router.js"></script>
-    <script src="js/master.js" charset="utf-8"></script>
-    <script src="js/messages.js" charset="utf-8"></script>
-    <script src="js/messageService.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <section class="projectName">
-        Project Login
-        <img onclick="handleHome()" src="gfx/home.svg" class="home-icon" />
-      </section>
-    </header>
-    <section>
-      <!-- login form -->
-      <div id="loginForm" class="login">
-        <img
-          src="http://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/user-icon.png"
-          width="200px"
-          class="user-ico"
-          alt=""
-        />
-        <input
-          type="text"
-          id="login-uname"
-          class="form-control field"
-          placeholder="Username"
-          aria-label="Username"
-          aria-describedby="basi#2c3e50c-addon1"
-        />
-        <input
-          type="password"
-          id="login-psswd"
-          class="form-control field"
-          placeholder="Password"
-          aria-label="Password"
-          aria-describedby="basic-addon1"
-        />
-        <span class="errormsg" id="loginErrorMsg"
-          >Invalid username or password!</span
-        >
-        <input
-          type="button"
-          id="loginBtn"
-          class="btn btn-primary btn-login"
-          value="Login"
-        />
-      </div>
 
-      <!-- jokes -->
-      <div class="jokes" id="jokes"><div id="joke" class="joke"></div></div>
-      <!-- send nudes -->
-      <div id="sendJoke" class="sendJoke">
-        <textarea id="addJokeTextArea"></textarea> <br />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          value="Send joke!"
-          onclick="handleUploadJoke()"
-        />
-      </div>
-      <!-- change password -->
-      <div
-        id="changePassword"
-        class="changePassword"
-        style="margin:auto; max-width:500px"
-        align="center"
-      >
-        <input
-          type="password"
-          id="password-reset-old"
-          class="form-control field"
-          placeholder="Old password"
-          aria-label="Old password"
-          aria-describedby="basi#2c3e50c-addon1"
-        />
-        <input
-          type="password"
-          id="password-reset-new"
-          class="form-control field"
-          placeholder="New password"
-          aria-label="New passowrd"
-          aria-describedby="basi#2c3e50c-addon1"
-        />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          value="Change!"
-          onclick="handleSendChangePassword()"
-        />
-      </div>
-      <!-- messages -->
-      <div id="messages" class="messagesBox" align="center"></div>
-      <!-- messageDetails -->
-      <div id="messageDetails" class="messageBox" align="center">
-        <div id="messageDetailsInner"></div>
-        <input
-          type="button"
-          class="btn btn-primary"
-          value="Back"
-          onclick="handleMessages()"
-        />
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Project Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <script type="text/javascript" src="js/router.js"></script>
+  <script src="js/master.js" charset="utf-8"></script>
+  <script src="js/messages.js" charset="utf-8"></script>
+  <script src="js/messageService.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <section class="projectName">
+      Project Login
+      <img onclick="handleHome()" src="gfx/home.svg" class="home-icon" />
     </section>
-    <section class="user-actions" align="center">
-      <div id="logoutBtn">
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          value="Get funny joke!"
-          onclick="handleGetJoke()"
-        />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          value="Send your own joke!"
-          onclick="sendJoke()"
-        />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          onclick="handleLogout()"
-          value="LogOut"
-        />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          onclick="handleChangePassword()"
-          value="Change Password"
-        />
-        <input
-          type="button"
-          class="btn btn-primary btn-getJoke"
-          onclick="handleMessages()"
-          value="Messages"
-        />
-      </div>
-    </section>
-    <footer>(c) 2019 by Stefan Rothmajer</footer>
-  </body>
+  </header>
+  <section>
+    <!-- login form -->
+    <div id="loginForm" class="login">
+      <img src="http://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/user-icon.png" width="200px"
+        class="user-ico" alt="" />
+      <input type="text" id="login-uname" class="form-control field" placeholder="Username" aria-label="Username"
+        aria-describedby="basi#2c3e50c-addon1" />
+      <input type="password" id="login-psswd" class="form-control field" placeholder="Password" aria-label="Password"
+        aria-describedby="basic-addon1" />
+      <span class="errormsg" id="loginErrorMsg">Invalid username or password!</span>
+      <input type="button" id="loginBtn" class="btn btn-primary btn-login" value="Login" />
+    </div>
+
+    <!-- jokes -->
+    <div class="jokes" id="jokes">
+      <div id="joke" class="joke"></div>
+    </div>
+    <!-- send nudes -->
+    <div id="sendJoke" class="sendJoke">
+      <textarea id="addJokeTextArea"></textarea> <br />
+      <input type="button" class="btn btn-primary btn-getJoke" value="Send joke!" onclick="handleUploadJoke()" />
+    </div>
+    <!-- change password -->
+    <div id="changePassword" class="changePassword" style="margin:auto; max-width:500px" align="center">
+      <input type="password" id="password-reset-old" class="form-control field" placeholder="Old password" aria-label="Old password"
+        aria-describedby="basi#2c3e50c-addon1" />
+      <input type="password" id="password-reset-new" class="form-control field" placeholder="New password" aria-label="New passowrd"
+        aria-describedby="basi#2c3e50c-addon1" />
+      <input type="button" class="btn btn-primary btn-getJoke" value="Change!" onclick="handleSendChangePassword()" />
+    </div>
+    <!-- messages -->
+    <div id="messages" class="messagesBox" align="center"></div>
+    <!-- messageDetails -->
+    <div id="messageDetails" class="messageBox" align="center">
+      <div id="messageDetailsInner"></div>
+      <input type="button" class="btn btn-primary" value="Back" onclick="handleMessages()" />
+    </div>
+  </section>
+  <section class="user-actions" align="center">
+    <div id="logoutBtn">
+      <input type="button" class="btn btn-primary btn-getJoke" value="Get funny joke!" onclick="handleGetJoke()" />
+      <input type="button" class="btn btn-primary btn-getJoke" value="Send your own joke!" onclick="sendJoke()" />
+      <input type="button" class="btn btn-primary btn-getJoke" onclick="handleLogout()" value="LogOut" />
+      <input type="button" class="btn btn-primary btn-getJoke" onclick="handleChangePassword()" value="Change Password" />
+      <input type="button" class="btn btn-primary btn-getJoke" onclick="handleMessages()" value="Messages" />
+    </div>
+  </section>
+  <footer>(c) 2019 by Stefan Rothmajer</footer>
+</body>
+
 </html>

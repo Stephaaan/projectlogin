@@ -27,6 +27,11 @@ var startMessageService = () => {
               type: "success",
               title: "You have new message(s)"
             });
+            console.log("fireeee");
+            if(sessionStorage.getItem("inDetails") === "true"){
+              console.log("new message trigger");
+              handleNewMessage(sessionStorage.getItem("detailWith"));
+            }
             messages = newMessages;
           }
         }

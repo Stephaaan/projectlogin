@@ -139,9 +139,23 @@ footer {
   font-weight: bolder;
 }
 .messageInner {
+  font-weight: 500;
   padding: 10px;
   border-radius: 20px;
-  background: rgba(200, 200, 200, 0.6);
+  background: rgb(52,152,219);
+  color:white;
+}
+.userNameInChat{
+  padding-left: 20px;
+  text-align: left;
+  width: 50%;
+  font-weight: 800;
+}
+.messageInnerFromMe {
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(220, 220, 220, 0.6);
 }
 .messageDetail {
   width: 50%;
@@ -151,7 +165,7 @@ footer {
   margin-top: 5px;
   border-radius: 5px;
   padding: 5px 0;
-  width: 80%;
+  width: 50%;
 }
 .btn-send {
   position: relative;

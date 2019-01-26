@@ -1,5 +1,6 @@
 function Router() {
   this.hideAll = () => {
+    sessionStorage.setItem("inDetails", false);
     $("#loginForm").hide();
     $("#jokes").hide();
     $("#logoutBtn").hide();
@@ -41,9 +42,10 @@ function Router() {
       $("#messages").show();
     }
   };
-  this.detailMessage = () => {
+  this.detailMessage = (id) => {
     if (sessionStorage.getItem("logged") === "true") {
       this.hideAll();
+      sessionStorage.setItem("inDetails", true);
       $("#messageDetails").show();
     }
   };
