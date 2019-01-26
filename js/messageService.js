@@ -32,10 +32,13 @@ var startMessageService = () => {
               console.log("new message trigger");
               handleNewMessage(sessionStorage.getItem("detailWith"));
             }
+            console.log(messages, newMessages);
             messages = newMessages;
+            
           }
         }
       });
     }
+    
   }, 5000);
 };

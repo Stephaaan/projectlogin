@@ -24,7 +24,6 @@ var handleMessages = () => {
       token: sessionStorage.getItem("token")
     }),
     success: data => {
-      messages = data;
       getSendedMessages((sendeddata) => {
         chat = buildChat(data.messages, sendeddata);
         router.messages();
@@ -34,6 +33,7 @@ var handleMessages = () => {
   });
 };
 var handleNewMessage = (inChatWith) => {
+  var savedInputText =  $("#responseInput").val();
   $.ajax({
     url: "http://itsovy.sk:1201/getmessages",
     type: "post",
@@ -43,11 +43,11 @@ var handleNewMessage = (inChatWith) => {
       token: sessionStorage.getItem("token")
     }),
     success: data => {
-      messages = data;
       getSendedMessages((sendeddata) => {
         chat = buildChat(data.messages, sendeddata);
         router.messages();
         detailWith(inChatWith);
+        $("#responseInput").val(savedInputText);
       });
     }
   });
@@ -249,7 +249,7 @@ var sendMessage = id => {
       if(sessionStorage.getItem("inDetails") === true){
         router.detailMessage(id);
       }
-      $("#messageResponse").val("");
+      $("#responseInput").val("");
     }
   });
 };
